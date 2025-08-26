@@ -1,0 +1,190 @@
+*{margin:0;padding:0;box-sizing:border-box}
+body {font-family: Arial, sans-serif; background:#f4f6f9; color:#333;}
+
+header {
+  background: #d8c623;
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+header h2 { margin:0 }
+nav a {
+  color: white;
+  margin: 0 10px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: color .3s;
+}
+nav a:hover { color: #facc15; }
+
+.hero {
+  background: url('https://images.unsplash.com/photo-1503376780353-7e6692767b70') no-repeat center/cover;
+  height: 90vh;
+  display: flex; justify-content: center; align-items: center;
+  text-align: center; color: white;
+}
+.hero h1 {
+  font-size: 3rem;
+  background: rgba(0,0,0,0.6);
+  padding: 20px;
+  border-radius: 10px;
+}
+.cta-btn {
+  display: inline-block;
+  margin-top: 20px;
+  padding: 12px 25px;
+  background: #facc15;
+  color: #000;
+  text-decoration: none;
+  font-weight: bold;
+  border-radius: 5px;
+}
+.cta-btn:hover { background: #eab308; }
+
+section {padding: 60px 20px; max-width: 1000px; margin: auto;}
+section h2 {text-align: center; margin-bottom: 20px; font-size: 2rem; color:#1e3a8a;}
+
+.card {
+  background: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+  margin: 10px 0;
+}
+
+footer {
+  text-align: center;
+  padding: 20px;
+  background: #ceb10f;
+  color: white;
+  margin-top: 40px;
+}
+
+/* Mobile Navigation */
+.menu-btn {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+.menu-btn span {
+  background: white;
+  height: 3px;
+  width: 25px;
+  margin: 4px 0;
+  transition: 0.4s;
+}
+
+/* Show hamburger only on small screens */
+@media (max-width: 768px) {
+  nav {
+    display: none;
+    flex-direction: column;
+    background: #1e3a8a;
+    position: absolute;
+    top: 60px; left: 0; width: 100%;
+  }
+  nav.active { display: flex; }
+  .menu-btn { display: flex; }
+}
+
+/* Splash Screen */
+#splash {
+  position: fixed;
+  top: 0; left: 0; width: 100%; height: 100%;
+  background: #afa01c;
+  color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  font-size: 2rem;
+  z-index: 2000;
+  transition: opacity 0.8s ease, visibility 0.8s;
+}
+
+#splash img {
+  width: 80px;
+  margin-bottom: 20px;
+  animation: spin 2s linear infinite;
+}
+
+@keyframes spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+#splash.hidden {
+  opacity: 0;
+  visibility: hidden;
+}
+
+.booking {
+  padding: 40px;
+  background: #f4f4f4;
+}
+
+.booking form {
+  max-width: 400px;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.booking input, .booking select, .booking button {
+  padding: 10px;
+  font-size: 16px;
+}
+
+.booking button {
+  background: #25D366;
+  color: white;
+  border: none;
+  cursor: pointer;
+  transition: 0.3s;
+  border-radius: 8px;
+}
+
+.booking button:hover {
+  background: #1ebe57;
+}
+
+/* Responsive Typography */
+@media (max-width: 768px) {
+  .hero h1 {
+    font-size: 1.8rem;
+    padding: 15px;
+  }
+  section {
+    padding: 40px 15px;
+  }
+  .card {
+    font-size: 0.95rem;
+  }
+  form input, form select, form textarea, form button {
+    font-size: 14px;
+    padding: 10px;
+  }
+}
+
+/* Extra small screens */
+@media (max-width: 480px) {
+  header h2 {
+    font-size: 1.2rem;
+  }
+  nav a {
+    padding: 10px;
+    font-size: 14px;
+  }
+  .hero {
+    height: 60vh;
+  }
+  .hero h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
+
